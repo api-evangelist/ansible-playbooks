@@ -1,152 +1,170 @@
 name: Ansible Playbooks
-description: APIs and resources for managing and executing Ansible playbooks for IT automation, configuration management, and orchestration
-image: https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
+description: >-
+  APIs and resources for managing and executing Ansible playbooks for IT automation,
+  configuration management, and orchestration.
+image: 
+  https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
 url: https://www.ansible.com
 created: '2024'
 modified: '2024'
 tags:
-- automation
-- configuration management
-- orchestration
-- DevOps
-- infrastructure as code
-apis:
-- name: Ansible Automation Platform API
-  description: REST API for Ansible Automation Platform (formerly Tower/AWX) to manage playbooks, inventories, and job execution
-  image: https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
-  humanURL: https://www.ansible.com/products/automation-platform
-  baseURL: https://your-tower-instance/api/v2/
-  tags:
   - automation
-  - playbooks
-  - jobs
+  - configuration management
   - orchestration
-  properties:
-  - type: Documentation
-    url: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
-  - type: OpenAPI
-    url: https://your-tower-instance/api/v2/swagger/
-  - type: Authentication
-    url: https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html
-  - type: Pricing
-    url: https://www.ansible.com/products/pricing
-  contact:
-  - type: Support
-    url: https://access.redhat.com/support
-  - type: Email
-    url: ansible-support@redhat.com
-- name: AWX API
-  description: Open source upstream API for Ansible Tower, providing programmatic access to playbook execution and management
-  image: https://raw.githubusercontent.com/ansible/awx-logos/master/awx/ui/client/assets/logo-header.svg
-  humanURL: https://github.com/ansible/awx
-  baseURL: https://your-awx-instance/api/v2/
-  tags:
-  - open source
-  - automation
-  - playbooks
-  - AWX
-  properties:
-  - type: Documentation
-    url: https://github.com/ansible/awx/blob/devel/docs/rest_api.md
-  - type: GitHub Repository
-    url: https://github.com/ansible/awx
-  - type: API Explorer
-    url: https://your-awx-instance/api/v2/
-  - type: Installation Guide
-    url: https://github.com/ansible/awx/blob/devel/INSTALL.md
-- name: Ansible Runner API
-  description: Python interface and API for directly executing Ansible playbooks programmatically
-  humanURL: https://ansible-runner.readthedocs.io/
-  baseURL: https://pypi.org/project/ansible-runner/
-  tags:
-  - Python
-  - execution
-  - playbooks
-  - library
-  properties:
-  - type: Documentation
-    url: https://ansible-runner.readthedocs.io/en/stable/
-  - type: GitHub Repository
-    url: https://github.com/ansible/ansible-runner
-  - type: Python Package
-    url: https://pypi.org/project/ansible-runner/
-  - type: Examples
-    url: https://ansible-runner.readthedocs.io/en/stable/intro.html#examples
-- name: Ansible Galaxy API
-  description: API for discovering, sharing, and downloading Ansible roles and collections
-  humanURL: https://galaxy.ansible.com
-  baseURL: https://galaxy.ansible.com/api/
-  tags:
-  - roles
-  - collections
-  - community
-  - sharing
-  properties:
-  - type: Documentation
-    url: https://galaxy.ansible.com/docs/
-  - type: API Documentation
-    url: https://galaxy.ansible.com/api/v3/
-  - type: Collections
-    url: https://galaxy.ansible.com/api/v3/collections/
-  - type: Roles
-    url: https://galaxy.ansible.com/api/v1/roles/
-- name: Ansible Automation Hub API
-  description: Enterprise API for certified Ansible content including collections, roles, and execution environments
-  humanURL: https://console.redhat.com/ansible/automation-hub
-  baseURL: https://console.redhat.com/api/automation-hub/
-  tags:
-  - enterprise
-  - certified content
-  - collections
-  - Red Hat
-  properties:
-  - type: Documentation
-    url: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
-  - type: API Guide
-    url: https://console.redhat.com/ansible/automation-hub/api/
-  - type: Certification
-    url: https://www.ansible.com/products/content-tools
-- name: Ansible Semaphore API
-  description: Modern UI and API for running Ansible playbooks with a focus on simplicity
-  humanURL: https://www.ansible-semaphore.com/
-  baseURL: https://your-semaphore-instance/api/
-  tags:
-  - UI
-  - open source
-  - playbooks
-  - workflow
-  properties:
-  - type: Documentation
-    url: https://docs.ansible-semaphore.com/
-  - type: GitHub Repository
-    url: https://github.com/ansible-semaphore/semaphore
-  - type: API Documentation
-    url: https://docs.ansible-semaphore.com/api-reference
+  - DevOps
+  - infrastructure as code
+apis:
+  - name: Ansible Automation Platform API
+    description: >-
+      REST API for Ansible Automation Platform (formerly Tower/AWX) to manage playbooks,
+      inventories, and job execution.
+    image: 
+      https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
+    humanURL: https://www.ansible.com/products/automation-platform
+    baseURL: https://your-tower-instance/api/v2/
+    tags:
+      - automation
+      - playbooks
+      - jobs
+      - orchestration
+    properties:
+      - type: Documentation
+        url: 
+          https://docs.ansible.com/automation-controller/latest/html/controllerapi/
+      - type: OpenAPI
+        url: https://your-tower-instance/api/v2/swagger/
+      - type: Authentication
+        url: 
+          https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html
+      - type: Pricing
+        url: https://www.ansible.com/products/pricing
+    contact:
+      - type: Support
+        url: https://access.redhat.com/support
+      - type: Email
+        url: ansible-support@redhat.com
+  - name: AWX API
+    description: >-
+      Open source upstream API for Ansible Tower, providing programmatic access to
+      playbook execution and management.
+    image: 
+      https://raw.githubusercontent.com/ansible/awx-logos/master/awx/ui/client/assets/logo-header.svg
+    humanURL: https://github.com/ansible/awx
+    baseURL: https://your-awx-instance/api/v2/
+    tags:
+      - open source
+      - automation
+      - playbooks
+      - AWX
+    properties:
+      - type: Documentation
+        url: https://github.com/ansible/awx/blob/devel/docs/rest_api.md
+      - type: GitHub Repository
+        url: https://github.com/ansible/awx
+      - type: API Explorer
+        url: https://your-awx-instance/api/v2/
+      - type: Installation Guide
+        url: https://github.com/ansible/awx/blob/devel/INSTALL.md
+  - name: Ansible Runner API
+    description: >-
+      Python interface and API for directly executing Ansible playbooks programmatically.
+    humanURL: https://ansible-runner.readthedocs.io/
+    baseURL: https://pypi.org/project/ansible-runner/
+    tags:
+      - Python
+      - execution
+      - playbooks
+      - library
+    properties:
+      - type: Documentation
+        url: https://ansible-runner.readthedocs.io/en/stable/
+      - type: GitHub Repository
+        url: https://github.com/ansible/ansible-runner
+      - type: Python Package
+        url: https://pypi.org/project/ansible-runner/
+      - type: Examples
+        url: https://ansible-runner.readthedocs.io/en/stable/intro.html#examples
+  - name: Ansible Galaxy API
+    description: >-
+      API for discovering, sharing, and downloading Ansible roles and collections.
+    humanURL: https://galaxy.ansible.com
+    baseURL: https://galaxy.ansible.com/api/
+    tags:
+      - roles
+      - collections
+      - community
+      - sharing
+    properties:
+      - type: Documentation
+        url: https://galaxy.ansible.com/docs/
+      - type: API Documentation
+        url: https://galaxy.ansible.com/api/v3/
+      - type: Collections
+        url: https://galaxy.ansible.com/api/v3/collections/
+      - type: Roles
+        url: https://galaxy.ansible.com/api/v1/roles/
+  - name: Ansible Automation Hub API
+    description: >-
+      Enterprise API for certified Ansible content including collections, roles, and
+      execution environments.
+    humanURL: https://console.redhat.com/ansible/automation-hub
+    baseURL: https://console.redhat.com/api/automation-hub/
+    tags:
+      - enterprise
+      - certified content
+      - collections
+      - Red Hat
+    properties:
+      - type: Documentation
+        url: 
+          https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
+      - type: API Guide
+        url: https://console.redhat.com/ansible/automation-hub/api/
+      - type: Certification
+        url: https://www.ansible.com/products/content-tools
+  - name: Ansible Semaphore API
+    description: >-
+      Modern UI and API for running Ansible playbooks with a focus on simplicity.
+    humanURL: https://www.ansible-semaphore.com/
+    baseURL: https://your-semaphore-instance/api/
+    tags:
+      - UI
+      - open source
+      - playbooks
+      - workflow
+    properties:
+      - type: Documentation
+        url: https://docs.ansible-semaphore.com/
+      - type: GitHub Repository
+        url: https://github.com/ansible-semaphore/semaphore
+      - type: API Documentation
+        url: https://docs.ansible-semaphore.com/api-reference
 maintainers:
-- name: Red Hat Ansible Team
-  email: info@ansible.com
-  url: https://www.ansible.com
+  - name: Red Hat Ansible Team
+    email: info@ansible.com
+    url: https://www.ansible.com
 common:
-- type: Getting Started
-  url: https://docs.ansible.com/ansible/latest/getting_started/
-- type: Best Practices
-  url: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
-- type: Community
-  url: https://www.ansible.com/community
-- type: Blog
-  url: https://www.ansible.com/blog
-- type: Forum
-  url: https://forum.ansible.com/
-- type: GitHub
-  url: https://github.com/ansible/ansible
-- type: Terms of Service
-  url: https://www.redhat.com/en/about/terms-use
-- type: Privacy Policy
-  url: https://www.redhat.com/en/about/privacy-policy
+  - type: Getting Started
+    url: https://docs.ansible.com/ansible/latest/getting_started/
+  - type: Best Practices
+    url: 
+      https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
+  - type: Community
+    url: https://www.ansible.com/community
+  - type: Blog
+    url: https://www.ansible.com/blog
+  - type: Forum
+    url: https://forum.ansible.com/
+  - type: GitHub
+    url: https://github.com/ansible/ansible
+  - type: Terms of Service
+    url: https://www.redhat.com/en/about/terms-use
+  - type: Privacy Policy
+    url: https://www.redhat.com/en/about/privacy-policy
 include:
-- name: Ansible Core Documentation
-  url: https://docs.ansible.com/ansible/latest/index.html
-- name: Ansible Playbook Examples
-  url: https://github.com/ansible/ansible-examples
-- name: Ansible Module Index
-  url: https://docs.ansible.com/ansible/latest/collections/index_module.html
+  - name: Ansible Core Documentation
+    url: https://docs.ansible.com/ansible/latest/index.html
+  - name: Ansible Playbook Examples
+    url: https://github.com/ansible/ansible-examples
+  - name: Ansible Module Index
+    url: https://docs.ansible.com/ansible/latest/collections/index_module.html
