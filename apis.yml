@@ -2,40 +2,36 @@ name: Ansible Playbooks
 description: >-
   APIs and resources for managing and executing Ansible playbooks for IT automation,
   configuration management, and orchestration.
-image: 
-  https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
+image: https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
 url: https://www.ansible.com
 created: '2024'
 modified: '2024'
 tags:
-  - automation
-  - configuration management
-  - orchestration
+  - Automation
+  - Configuration Management
   - DevOps
-  - infrastructure as code
+  - Infrastructure as Code
+  - Orchestration
 apis:
   - name: Ansible Automation Platform API
     description: >-
       REST API for Ansible Automation Platform (formerly Tower/AWX) to manage playbooks,
       inventories, and job execution.
-    image: 
-      https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
+    image: https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png
     humanURL: https://www.ansible.com/products/automation-platform
     baseURL: https://your-tower-instance/api/v2/
     tags:
-      - automation
-      - playbooks
-      - jobs
-      - orchestration
+      - Automation
+      - Jobs
+      - Orchestration
+      - Playbooks
     properties:
       - type: Documentation
-        url: 
-          https://docs.ansible.com/automation-controller/latest/html/controllerapi/
+        url: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
       - type: OpenAPI
         url: https://your-tower-instance/api/v2/swagger/
       - type: Authentication
-        url: 
-          https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html
+        url: https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html
       - type: Pricing
         url: https://www.ansible.com/products/pricing
     contact:
@@ -47,15 +43,14 @@ apis:
     description: >-
       Open source upstream API for Ansible Tower, providing programmatic access to
       playbook execution and management.
-    image: 
-      https://raw.githubusercontent.com/ansible/awx-logos/master/awx/ui/client/assets/logo-header.svg
+    image: https://raw.githubusercontent.com/ansible/awx-logos/master/awx/ui/client/assets/logo-header.svg
     humanURL: https://github.com/ansible/awx
     baseURL: https://your-awx-instance/api/v2/
     tags:
-      - open source
-      - automation
-      - playbooks
+      - Automation
       - AWX
+      - Open Source
+      - Playbooks
     properties:
       - type: Documentation
         url: https://github.com/ansible/awx/blob/devel/docs/rest_api.md
@@ -71,10 +66,10 @@ apis:
     humanURL: https://ansible-runner.readthedocs.io/
     baseURL: https://pypi.org/project/ansible-runner/
     tags:
+      - Execution
+      - Library
+      - Playbooks
       - Python
-      - execution
-      - playbooks
-      - library
     properties:
       - type: Documentation
         url: https://ansible-runner.readthedocs.io/en/stable/
@@ -90,10 +85,10 @@ apis:
     humanURL: https://galaxy.ansible.com
     baseURL: https://galaxy.ansible.com/api/
     tags:
-      - roles
-      - collections
-      - community
-      - sharing
+      - Collections
+      - Community
+      - Roles
+      - Sharing
     properties:
       - type: Documentation
         url: https://galaxy.ansible.com/docs/
@@ -110,14 +105,13 @@ apis:
     humanURL: https://console.redhat.com/ansible/automation-hub
     baseURL: https://console.redhat.com/api/automation-hub/
     tags:
-      - enterprise
-      - certified content
-      - collections
+      - Certified Content
+      - Collections
+      - Enterprise
       - Red Hat
     properties:
       - type: Documentation
-        url: 
-          https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
+        url: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
       - type: API Guide
         url: https://console.redhat.com/ansible/automation-hub/api/
       - type: Certification
@@ -128,10 +122,10 @@ apis:
     humanURL: https://www.ansible-semaphore.com/
     baseURL: https://your-semaphore-instance/api/
     tags:
+      - Open Source
+      - Playbooks
       - UI
-      - open source
-      - playbooks
-      - workflow
+      - Workflow
     properties:
       - type: Documentation
         url: https://docs.ansible-semaphore.com/
@@ -147,8 +141,7 @@ common:
   - type: Getting Started
     url: https://docs.ansible.com/ansible/latest/getting_started/
   - type: Best Practices
-    url: 
-      https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
+    url: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
   - type: Community
     url: https://www.ansible.com/community
   - type: Blog
