@@ -1,0 +1,207 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Ansible Playbooks
+  description: >-
+    Unified vocabulary covering the Ansible automation ecosystem APIs including
+    key data entities, action verbs, parameters, enumerations, and provider
+    integrations for the Ansible Automation Platform, AWX, Galaxy, Automation
+    Hub, Runner, and Semaphore.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: Ansible Automation Platform API
+      namespace: ansible-aap
+      version: "v2"
+      baseUrl: https://your-aap-instance/api/v2/
+      status: active
+    - name: AWX API
+      namespace: awx
+      version: "v2"
+      baseUrl: https://your-awx-instance/api/v2/
+      status: active
+    - name: Ansible Runner API
+      namespace: ansible-runner
+      version: "2.x"
+      baseUrl: https://pypi.org/project/ansible-runner/
+      status: active
+    - name: Ansible Galaxy API
+      namespace: galaxy
+      version: "v3"
+      baseUrl: https://galaxy.ansible.com/api/
+      status: active
+    - name: Ansible Automation Hub API
+      namespace: automation-hub
+      version: "v3"
+      baseUrl: https://console.redhat.com/api/automation-hub/
+      status: active
+    - name: Ansible Semaphore API
+      namespace: semaphore
+      version: "v2"
+      baseUrl: https://your-semaphore-instance/api/
+      status: active
+
+  resources:
+    - name: jobs
+      description: Playbook job execution records with status, output, and configuration.
+      apis: [ansible-aap, awx, semaphore]
+      actions: [create, get, list, cancel, relaunch, delete]
+    - name: job-templates
+      description: Reusable job configurations that define playbook, inventory, credentials, and settings.
+      apis: [ansible-aap, awx, semaphore]
+      actions: [create, get, list, update, delete, launch]
+    - name: inventories
+      description: Host collections and groups targeted by Ansible job execution.
+      apis: [ansible-aap, awx]
+      actions: [create, get, list, update, delete, sync]
+    - name: hosts
+      description: Individual managed hosts within inventories.
+      apis: [ansible-aap, awx]
+      actions: [create, get, list, update, delete]
+    - name: credentials
+      description: Stored authentication objects (SSH keys, cloud credentials, vault passwords).
+      apis: [ansible-aap, awx]
+      actions: [create, get, list, update, delete]
+    - name: projects
+      description: SCM-backed repositories containing playbooks and related files.
+      apis: [ansible-aap, awx, semaphore]
+      actions: [create, get, list, update, delete, sync]
+    - name: workflows
+      description: Linked sequences of job templates with conditional branching.
+      apis: [ansible-aap, awx]
+      actions: [create, get, list, update, delete, launch]
+    - name: schedules
+      description: Time-based triggers for recurring job template execution.
+      apis: [ansible-aap, awx]
+      actions: [create, get, list, update, delete]
+    - name: collections
+      description: Packaged Ansible content including modules, roles, and plugins.
+      apis: [galaxy, automation-hub]
+      actions: [get, list, download, publish]
+    - name: roles
+      description: Reusable Ansible role definitions available from Galaxy.
+      apis: [galaxy]
+      actions: [get, list, download]
+
+  actions:
+    - name: launch
+      description: Trigger immediate execution of a job template or workflow.
+      http_method: POST
+      pattern: write
+    - name: create
+      description: Create a new resource (inventory, credential, job template, etc.).
+      http_method: POST
+      pattern: write
+    - name: get
+      description: Retrieve a single resource by ID.
+      http_method: GET
+      pattern: read
+    - name: list
+      description: Retrieve a paginated collection of resources.
+      http_method: GET
+      pattern: read
+    - name: update
+      description: Modify an existing resource.
+      http_method: PATCH
+      pattern: write
+    - name: delete
+      description: Remove a resource permanently.
+      http_method: DELETE
+      pattern: destructive
+    - name: cancel
+      description: Cancel an in-progress job execution.
+      http_method: POST
+      pattern: write
+    - name: relaunch
+      description: Relaunch a completed or failed job with the same configuration.
+      http_method: POST
+      pattern: write
+    - name: sync
+      description: Synchronize a project from SCM or an inventory from an external source.
+      http_method: POST
+      pattern: write
+    - name: publish
+      description: Publish a new collection version to Galaxy or Automation Hub.
+      http_method: POST
+      pattern: write
+
+  schemas:
+    core:
+      - name: PlaybookJob
+        description: A single Ansible playbook execution with status and metadata.
+        key_properties: [id, name, status, playbook, started, finished, elapsed, job_type, launch_type]
+      - name: Inventory
+        description: A host collection used as the target for Ansible playbook execution.
+        key_properties: [id, name, organization, kind, total_hosts, total_groups, variables]
+      - name: JobTemplate
+        description: A reusable job configuration template defining playbook, inventory, and credentials.
+        key_properties: [id, name, playbook, inventory, credentials, extra_vars, verbosity]
+    content:
+      - name: Collection
+        description: A distributable Ansible content package containing modules, roles, and plugins.
+        key_properties: [namespace, name, version, download_count, certified]
+      - name: Role
+        description: A reusable Ansible role with tasks, handlers, defaults, and templates.
+        key_properties: [namespace, name, github_repo, download_count, versions]
+
+  parameters:
+    pagination:
+      - name: page
+        description: Page number for paginated results.
+        type: integer
+      - name: page_size
+        description: Number of results per page.
+        type: integer
+    filters:
+      - name: status
+        description: Filter jobs by execution status.
+        type: string
+      - name: job_type
+        description: Filter jobs by type (run, check, scan).
+        type: string
+      - name: launched_by
+        description: Filter jobs by the user who launched them.
+        type: string
+    identifiers:
+      - name: id
+        description: Unique integer identifier for a resource.
+        type: integer
+
+  enums:
+    job_status:
+      - new
+      - pending
+      - waiting
+      - running
+      - successful
+      - failed
+      - error
+      - canceled
+    job_type:
+      - run
+      - check
+      - scan
+    launch_type:
+      - manual
+      - relaunch
+      - callback
+      - scheduled
+      - dependency
+      - workflow
+      - sync
+      - scm
+    inventory_kind:
+      - ""
+      - smart
+      - constructed
+
+  authentication:
+    schemes:
+      - type: bearer
+        description: OAuth2 bearer token; used by AAP, AWX, and Automation Hub APIs.
+      - type: basic
+        description: HTTP Basic Auth for AWX and AAP API access.
+      - type: apikey
+        description: Red Hat service account token for Automation Hub and console.redhat.com APIs.

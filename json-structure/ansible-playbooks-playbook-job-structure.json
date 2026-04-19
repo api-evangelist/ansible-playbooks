@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/json-structure/ansible-playbooks-playbook-job-structure.json",
+  "description": "An Ansible playbook job representing a single execution of a job template, including status, output, and configuration details.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "Unique numeric identifier for the job.",
+      "example": 500123
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the job template that spawned this job.",
+      "example": "Deploy Web Application"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "pending",
+        "waiting",
+        "running",
+        "successful",
+        "failed",
+        "error",
+        "canceled"
+      ],
+      "description": "Current job status.",
+      "example": "successful"
+    },
+    "playbook": {
+      "type": "string",
+      "description": "Playbook file executed by this job.",
+      "example": "site.yml"
+    },
+    "started": {
+      "type": "datetime",
+      "description": "Timestamp when the job started executing.",
+      "example": "2026-04-19T14:00:00Z"
+    },
+    "finished": {
+      "type": "datetime",
+      "description": "Timestamp when the job finished.",
+      "example": "2026-04-19T14:05:00Z"
+    },
+    "elapsed": {
+      "type": "double",
+      "description": "Job duration in seconds.",
+      "example": 300.5
+    },
+    "job_type": {
+      "type": "string",
+      "enum": [
+        "run",
+        "check",
+        "scan"
+      ],
+      "description": "Type of Ansible job.",
+      "example": "run"
+    },
+    "launch_type": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "relaunch",
+        "callback",
+        "scheduled",
+        "dependency",
+        "workflow",
+        "sync",
+        "scm"
+      ],
+      "description": "How the job was launched.",
+      "example": "manual"
+    },
+    "verbosity": {
+      "type": "int32",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "Ansible verbosity level (0-5).",
+      "example": 0
+    },
+    "limit": {
+      "type": "string",
+      "description": "Host pattern limit applied to this job run.",
+      "example": "web-servers"
+    },
+    "extra_vars": {
+      "type": "string",
+      "description": "Extra variables passed to the playbook as a JSON string.",
+      "example": "{\"env\": \"production\"}"
+    },
+    "inventory": {
+      "type": "int32",
+      "description": "ID of the inventory used by this job.",
+      "example": 42
+    },
+    "project": {
+      "type": "int32",
+      "description": "ID of the project containing the playbook.",
+      "example": 7
+    },
+    "result_traceback": {
+      "type": "string",
+      "description": "Error traceback if the job failed.",
+      "example": ""
+    },
+    "created": {
+      "type": "datetime",
+      "description": "Timestamp when the job record was created.",
+      "example": "2026-04-19T13:59:00Z"
+    },
+    "modified": {
+      "type": "datetime",
+      "description": "Timestamp when the job record was last modified.",
+      "example": "2026-04-19T14:05:00Z"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "status",
+    "playbook",
+    "job_type"
+  ],
+  "name": "PlaybookJob"
+}

@@ -1,0 +1,19 @@
+{
+  "id": 500123,
+  "name": "Deploy Web Application",
+  "status": "successful",
+  "playbook": "site.yml",
+  "started": "2026-04-19T14:00:00Z",
+  "finished": "2026-04-19T14:05:00Z",
+  "elapsed": 300.5,
+  "job_type": "run",
+  "launch_type": "manual",
+  "verbosity": 0,
+  "limit": "web-servers",
+  "extra_vars": "{\"env\": \"production\", \"app_version\": \"2.4.1\"}",
+  "inventory": 42,
+  "project": 7,
+  "result_traceback": "",
+  "created": "2026-04-19T13:59:00Z",
+  "modified": "2026-04-19T14:05:00Z"
+}

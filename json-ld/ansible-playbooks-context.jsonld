@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ansible": "https://api-evangelist.github.io/ansible-playbooks/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "PlaybookJob": "ansible:PlaybookJob",
+    "Inventory": "ansible:Inventory",
+
+    "id": {"@id": "dcterms:identifier", "@type": "xsd:integer"},
+    "name": "schema:name",
+    "description": "schema:description",
+    "status": {"@id": "ansible:status", "@type": "xsd:string"},
+    "playbook": {"@id": "ansible:playbook", "@type": "xsd:string"},
+    "started": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+    "finished": {"@id": "ansible:finished", "@type": "xsd:dateTime"},
+    "elapsed": {"@id": "ansible:elapsed", "@type": "xsd:decimal"},
+    "jobType": {"@id": "ansible:job_type", "@type": "xsd:string"},
+    "launchType": {"@id": "ansible:launch_type", "@type": "xsd:string"},
+    "verbosity": {"@id": "ansible:verbosity", "@type": "xsd:integer"},
+    "limit": {"@id": "ansible:limit", "@type": "xsd:string"},
+    "extraVars": {"@id": "ansible:extra_vars", "@type": "xsd:string"},
+    "inventory": {"@id": "ansible:inventory", "@type": "xsd:integer"},
+    "project": {"@id": "ansible:project", "@type": "xsd:integer"},
+    "organization": {"@id": "ansible:organization", "@type": "xsd:integer"},
+    "kind": {"@id": "ansible:kind", "@type": "xsd:string"},
+    "variables": {"@id": "ansible:variables", "@type": "xsd:string"},
+    "totalHosts": {"@id": "ansible:total_hosts", "@type": "xsd:integer"},
+    "totalGroups": {"@id": "ansible:total_groups", "@type": "xsd:integer"},
+    "created": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+    "modified": {"@id": "schema:dateModified", "@type": "xsd:dateTime"}
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/json-structure/ansible-playbooks-inventory-structure.json",
+  "description": "An Ansible inventory containing groups and hosts targeted by playbook execution.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "Unique identifier for the inventory.",
+      "example": 42
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for the inventory.",
+      "example": "Production Web Servers"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the inventory and its purpose.",
+      "example": "All production web server hosts across US-East region."
+    },
+    "organization": {
+      "type": "int32",
+      "description": "ID of the organization that owns this inventory.",
+      "example": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "",
+        "smart",
+        "constructed"
+      ],
+      "description": "Inventory kind \u2014 empty for standard, smart, or constructed.",
+      "example": ""
+    },
+    "host_filter": {
+      "type": "string",
+      "description": "Filter expression for smart inventories.",
+      "example": ""
+    },
+    "variables": {
+      "type": "string",
+      "description": "Inventory-level variables as a JSON or YAML string.",
+      "example": "{\"ansible_user\": \"deploy\"}"
+    },
+    "total_hosts": {
+      "type": "int32",
+      "description": "Total number of hosts in this inventory.",
+      "example": 24
+    },
+    "hosts_with_active_failures": {
+      "type": "int32",
+      "description": "Number of hosts with active failures.",
+      "example": 0
+    },
+    "total_groups": {
+      "type": "int32",
+      "description": "Total number of groups in this inventory.",
+      "example": 4
+    },
+    "has_inventory_sources": {
+      "type": "boolean",
+      "description": "Whether this inventory has external inventory sources.",
+      "example": false
+    },
+    "created": {
+      "type": "datetime",
+      "description": "Timestamp when the inventory was created.",
+      "example": "2026-01-01T00:00:00Z"
+    },
+    "modified": {
+      "type": "datetime",
+      "description": "Timestamp when the inventory was last modified.",
+      "example": "2026-04-19T00:00:00Z"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "organization"
+  ],
+  "name": "Inventory"
+}
