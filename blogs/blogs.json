@@ -2,13 +2,17 @@
   "repo": "ansible-playbooks",
   "feeds": [
     {
-      "source": "https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html",
-      "feed_url": "https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html",
+      "source": "https://www.redhat.com/en/rss/blog",
+      "feed_url": "https://www.redhat.com/en/rss/blog",
       "title": "",
-      "saved": 0,
-      "method": "none"
+      "saved": 10,
+      "method": "feed"
+    },
+    {
+      "source": "https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-01T23:35:02Z",
-  "post_count": 0
+  "post_count": 11,
+  "fetched": "2026-06-14T20:42:17Z"
 }
