@@ -5,7 +5,7 @@ description: >-
   orchestration. Covers the Ansible Automation Platform, AWX, Galaxy, Automation
   Hub, Runner, and Semaphore APIs that power modern infrastructure automation
   workflows.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/apis.yml
 created: "2024-01-15"
 modified: "2026-04-19"
@@ -26,7 +26,7 @@ apis:
       execution at enterprise scale. Supports RBAC, workflows, schedules,
       notifications, and survey prompts. Available as a self-hosted deployment
       or managed via Red Hat's cloud.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
     baseURL: https://your-aap-instance/api/v2/
     tags:
@@ -59,7 +59,7 @@ apis:
       API offers programmatic access to job execution, inventory management,
       credential storage, workflow templates, and scheduling. Self-hosted and
       free under the Apache 2.0 license.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://github.com/ansible/awx
     baseURL: https://your-awx-instance/api/v2/
     tags:
@@ -88,7 +88,7 @@ apis:
       from within other applications and tools. Used by AWX, Automation
       Platform, and CI/CD pipelines to launch Ansible with structured input and
       output handling.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://ansible-runner.readthedocs.io/
     baseURL: https://pypi.org/project/ansible-runner/
     tags:
@@ -117,7 +117,7 @@ apis:
       publishing Ansible content. Supports v1 (roles), v2 (mixed), and v3
       (collections) API versions with namespace management, search, versioning,
       and download statistics.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://galaxy.ansible.com
     baseURL: https://galaxy.ansible.com/api/
     tags:
@@ -143,7 +143,7 @@ apis:
       Ansible collections, roles, and execution environments. The API provides
       access to Red Hat certified and partner-validated Ansible content for
       use in production Ansible Automation Platform deployments.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://console.redhat.com/ansible/automation-hub
     baseURL: https://console.redhat.com/api/automation-hub/
     tags:
@@ -170,7 +170,7 @@ apis:
       scheduling, access control, and a clean interface for teams using Ansible
       without the complexity of Automation Platform. The REST API supports
       full task and project management.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.ansible-semaphore.com/
     baseURL: https://your-semaphore-instance/api/
     tags:
