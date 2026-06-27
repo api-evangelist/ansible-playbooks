@@ -104,7 +104,7 @@ apis:
         url: https://ansible-runner.readthedocs.io/en/stable/python_interface.html
       - type: GitHubRepository
         url: https://github.com/ansible/ansible-runner
-      - type: SDK
+      - type: SDKs
         url: https://pypi.org/project/ansible-runner/
     contact:
       - FN: Ansible Community
@@ -208,7 +208,7 @@ common:
     url: https://www.redhat.com/en/about/privacy-policy
   - type: GitHubOrganization
     url: https://github.com/ansible
-  - type: Forum
+  - type: Forums
     url: https://forum.ansible.com/
   - type: JSONSchema
     url: https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/json-schema/ansible-playbooks-playbook-job-schema.json
