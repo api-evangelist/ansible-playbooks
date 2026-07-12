@@ -1,0 +1,20 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ansible-playbooks-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: OAuth2Token
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: Personal or application OAuth2 access token.
+  sources:
+  - openapi/ansible-playbooks-openapi.yml
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication using local controller credentials.
+  sources:
+  - openapi/ansible-playbooks-openapi.yml

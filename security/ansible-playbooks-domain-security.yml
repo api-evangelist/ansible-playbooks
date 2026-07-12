@@ -1,0 +1,37 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: docs.ansible.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 12:36:59 2026 GMT
+  hsts: false
+- host: ansible-runner.readthedocs.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 27 13:13:23 2026 GMT
+  hsts: false
+- host: pypi.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 29 04:33:07 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: ansible.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
+- domain: readthedocs.io
+  dnssec: false
+  caa:
+  - 0 issuewild "comodoca.com"
+  - 0 issuewild "digicert.com; cansignhttpexchanges=yes"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+  - 0 issuewild "ssl.com"
+  - 0 issue " amazontrust.com"
+  spf: false
+  dmarc: false
