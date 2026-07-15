@@ -196,6 +196,8 @@ maintainers:
     X: apievangelist
     url: https://apievangelist.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/ansible-playbooks-agentic-access.yml
   - type: DomainSecurity
     url: security/ansible-playbooks-domain-security.yml
   - type: Authentication
