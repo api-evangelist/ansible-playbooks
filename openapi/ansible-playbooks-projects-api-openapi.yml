@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: Ansible Automation Controller Playbooks Auth Projects API
+  version: '2'
+  description: 'REST API for managing and executing Ansible playbooks via the Ansible
+
+    Automation Controller (formerly Ansible Tower / AWX), the enterprise
+
+    automation engine inside the Red Hat Ansible Automation Platform.
+
+    Playbooks live inside projects (SCM-synced from Git, etc.) and are run
+
+    via job templates that bind them to inventories, credentials, and
+
+    extra variables. The API exposes management of inventories, hosts,
+
+    credentials, projects, job templates, workflow job templates,
+
+    schedules, organizations, teams, users, and the launching and
+
+    inspection of jobs.
+
+    '
+  contact:
+    name: Red Hat Ansible Support
+    url: https://access.redhat.com/products/red-hat-ansible-automation-platform/
+servers:
+- url: https://{controller_host}/api/v2
+  description: Self-hosted Ansible Automation Controller deployment
+  variables:
+    controller_host:
+      default: controller.example.com
+      description: Hostname of the Automation Controller instance.
+security:
+- OAuth2Token: []
+- BasicAuth: []
+tags:
+- name: Projects
+paths:
+  /projects/:
+    get:
+      tags:
+      - Projects
+      summary: List projects
+      operationId: listProjects
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags:
+      - Projects
+      summary: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '201':
+          description: Created.
+  /projects/{id}/:
+    get:
+      tags:
+      - Projects
+      summary: Retrieve a project
+      operationId: getProject
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A project.
+  /projects/{id}/update/:
+    post:
+      tags:
+      - Projects
+      summary: Trigger an SCM project update
+      operationId: updateProject
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Update started.
+components:
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
+  schemas:
+    Project:
+      type: object
+      required:
+      - name
+      - scm_type
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        organization:
+          type: integer
+        scm_type:
+          type: string
+          enum:
+          - git
+          - hg
+          - svn
+          - archive
+          - insights
+          - ''
+        scm_url:
+          type: string
+        scm_branch:
+          type: string
+        scm_credential:
+          type: integer
+        scm_update_on_launch:
+          type: boolean
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    OAuth2Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Personal or application OAuth2 access token.
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using local controller credentials.

@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Ansible Automation Controller Playbooks Auth Inventories API
+  version: '2'
+  description: 'REST API for managing and executing Ansible playbooks via the Ansible
+
+    Automation Controller (formerly Ansible Tower / AWX), the enterprise
+
+    automation engine inside the Red Hat Ansible Automation Platform.
+
+    Playbooks live inside projects (SCM-synced from Git, etc.) and are run
+
+    via job templates that bind them to inventories, credentials, and
+
+    extra variables. The API exposes management of inventories, hosts,
+
+    credentials, projects, job templates, workflow job templates,
+
+    schedules, organizations, teams, users, and the launching and
+
+    inspection of jobs.
+
+    '
+  contact:
+    name: Red Hat Ansible Support
+    url: https://access.redhat.com/products/red-hat-ansible-automation-platform/
+servers:
+- url: https://{controller_host}/api/v2
+  description: Self-hosted Ansible Automation Controller deployment
+  variables:
+    controller_host:
+      default: controller.example.com
+      description: Hostname of the Automation Controller instance.
+security:
+- OAuth2Token: []
+- BasicAuth: []
+tags:
+- name: Inventories
+paths:
+  /inventories/:
+    get:
+      tags:
+      - Inventories
+      summary: List inventories
+      operationId: listInventories
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags:
+      - Inventories
+      summary: Create an inventory
+      operationId: createInventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Inventory'
+      responses:
+        '201':
+          description: Created.
+  /inventories/{id}/:
+    get:
+      tags:
+      - Inventories
+      summary: Retrieve an inventory
+      operationId: getInventory
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: An inventory.
+    delete:
+      tags:
+      - Inventories
+      summary: Delete an inventory
+      operationId: deleteInventory
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: Deleted.
+components:
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
+  schemas:
+    Inventory:
+      type: object
+      required:
+      - name
+      - organization
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        organization:
+          type: integer
+        kind:
+          type: string
+          enum:
+          - ''
+          - smart
+        variables:
+          type: string
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    OAuth2Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Personal or application OAuth2 access token.
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using local controller credentials.

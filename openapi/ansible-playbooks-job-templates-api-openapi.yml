@@ -1,0 +1,190 @@
+openapi: 3.1.0
+info:
+  title: Ansible Automation Controller Playbooks Auth Job Templates API
+  version: '2'
+  description: 'REST API for managing and executing Ansible playbooks via the Ansible
+
+    Automation Controller (formerly Ansible Tower / AWX), the enterprise
+
+    automation engine inside the Red Hat Ansible Automation Platform.
+
+    Playbooks live inside projects (SCM-synced from Git, etc.) and are run
+
+    via job templates that bind them to inventories, credentials, and
+
+    extra variables. The API exposes management of inventories, hosts,
+
+    credentials, projects, job templates, workflow job templates,
+
+    schedules, organizations, teams, users, and the launching and
+
+    inspection of jobs.
+
+    '
+  contact:
+    name: Red Hat Ansible Support
+    url: https://access.redhat.com/products/red-hat-ansible-automation-platform/
+servers:
+- url: https://{controller_host}/api/v2
+  description: Self-hosted Ansible Automation Controller deployment
+  variables:
+    controller_host:
+      default: controller.example.com
+      description: Hostname of the Automation Controller instance.
+security:
+- OAuth2Token: []
+- BasicAuth: []
+tags:
+- name: Job Templates
+paths:
+  /job_templates/:
+    get:
+      tags:
+      - Job Templates
+      summary: List job templates
+      operationId: listJobTemplates
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags:
+      - Job Templates
+      summary: Create a job template
+      operationId: createJobTemplate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobTemplate'
+      responses:
+        '201':
+          description: Created.
+  /job_templates/{id}/:
+    get:
+      tags:
+      - Job Templates
+      summary: Retrieve a job template
+      operationId: getJobTemplate
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A job template.
+  /job_templates/{id}/launch/:
+    post:
+      tags:
+      - Job Templates
+      summary: Launch a job template
+      operationId: launchJobTemplate
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                extra_vars:
+                  type: object
+                  additionalProperties: true
+                limit:
+                  type: string
+                inventory:
+                  type: integer
+                credentials:
+                  type: array
+                  items:
+                    type: integer
+                job_tags:
+                  type: string
+                skip_tags:
+                  type: string
+      responses:
+        '201':
+          description: Job launched. Returns the created job.
+components:
+  schemas:
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    JobTemplate:
+      type: object
+      required:
+      - name
+      - job_type
+      - inventory
+      - project
+      - playbook
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        job_type:
+          type: string
+          enum:
+          - run
+          - check
+        inventory:
+          type: integer
+        project:
+          type: integer
+        playbook:
+          type: string
+        credentials:
+          type: array
+          items:
+            type: integer
+        limit:
+          type: string
+        verbosity:
+          type: integer
+          minimum: 0
+          maximum: 5
+        extra_vars:
+          type: string
+        ask_variables_on_launch:
+          type: boolean
+        ask_limit_on_launch:
+          type: boolean
+        ask_tags_on_launch:
+          type: boolean
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    OAuth2Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Personal or application OAuth2 access token.
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using local controller credentials.
