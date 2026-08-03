@@ -1,0 +1,36 @@
+{
+  "provider": "ansible-playbooks",
+  "sources": [
+    "ansible-playbooks-auth-api-openapi.yml",
+    "ansible-playbooks-credentials-api-openapi.yml",
+    "ansible-playbooks-hosts-api-openapi.yml",
+    "ansible-playbooks-inventories-api-openapi.yml",
+    "ansible-playbooks-job-templates-api-openapi.yml",
+    "ansible-playbooks-jobs-api-openapi.yml",
+    "ansible-playbooks-organizations-api-openapi.yml",
+    "ansible-playbooks-projects-api-openapi.yml",
+    "ansible-playbooks-schedules-api-openapi.yml",
+    "ansible-playbooks-users-api-openapi.yml",
+    "ansible-playbooks-workflow-job-templates-api-openapi.yml",
+    "ansible-playbooks-workflow-jobs-api-openapi.yml"
+  ],
+  "outputs": [
+    "ansible-playbooks-auth-api-openapi.yml",
+    "ansible-playbooks-credentials-api-openapi.yml",
+    "ansible-playbooks-hosts-api-openapi.yml",
+    "ansible-playbooks-inventories-api-openapi.yml",
+    "ansible-playbooks-job-templates-api-openapi.yml",
+    "ansible-playbooks-jobs-api-openapi.yml",
+    "ansible-playbooks-organizations-api-openapi.yml",
+    "ansible-playbooks-projects-api-openapi.yml",
+    "ansible-playbooks-schedules-api-openapi.yml",
+    "ansible-playbooks-users-api-openapi.yml",
+    "ansible-playbooks-workflow-job-templates-api-openapi.yml",
+    "ansible-playbooks-workflow-jobs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

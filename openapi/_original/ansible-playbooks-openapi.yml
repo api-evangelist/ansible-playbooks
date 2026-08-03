@@ -1,0 +1,619 @@
+openapi: 3.1.0
+info:
+  title: Ansible Automation Controller Playbooks API
+  version: "2"
+  description: |
+    REST API for managing and executing Ansible playbooks via the Ansible
+    Automation Controller (formerly Ansible Tower / AWX), the enterprise
+    automation engine inside the Red Hat Ansible Automation Platform.
+    Playbooks live inside projects (SCM-synced from Git, etc.) and are run
+    via job templates that bind them to inventories, credentials, and
+    extra variables. The API exposes management of inventories, hosts,
+    credentials, projects, job templates, workflow job templates,
+    schedules, organizations, teams, users, and the launching and
+    inspection of jobs.
+  contact:
+    name: Red Hat Ansible Support
+    url: https://access.redhat.com/products/red-hat-ansible-automation-platform/
+servers:
+  - url: https://{controller_host}/api/v2
+    description: Self-hosted Ansible Automation Controller deployment
+    variables:
+      controller_host:
+        default: controller.example.com
+        description: Hostname of the Automation Controller instance.
+tags:
+  - name: Auth
+    description: OAuth2 token management.
+  - name: Organizations
+  - name: Users
+  - name: Projects
+  - name: Inventories
+  - name: Hosts
+  - name: Credentials
+  - name: Job Templates
+  - name: Jobs
+  - name: Workflow Job Templates
+  - name: Workflow Jobs
+  - name: Schedules
+paths:
+  /tokens/:
+    get:
+      tags: [Auth]
+      summary: List OAuth2 tokens
+      operationId: listTokens
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Auth]
+      summary: Create an OAuth2 personal access token
+      operationId: createToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                scope:
+                  type: string
+                  enum: [read, write]
+                application:
+                  type: integer
+                  nullable: true
+      responses:
+        '201':
+          description: Token created.
+  /organizations/:
+    get:
+      tags: [Organizations]
+      summary: List organizations
+      operationId: listOrganizations
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/Search'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Organizations]
+      summary: Create an organization
+      operationId: createOrganization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+      responses:
+        '201':
+          description: Created.
+  /organizations/{id}/:
+    get:
+      tags: [Organizations]
+      summary: Retrieve an organization
+      operationId: getOrganization
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: An organization.
+    patch:
+      tags: [Organizations]
+      summary: Partially update an organization
+      operationId: patchOrganization
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+      responses:
+        '200':
+          description: Updated.
+    delete:
+      tags: [Organizations]
+      summary: Delete an organization
+      operationId: deleteOrganization
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: Deleted.
+  /users/:
+    get:
+      tags: [Users]
+      summary: List users
+      operationId: listUsers
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Users]
+      summary: Create a user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username]
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                email:
+                  type: string
+                is_superuser:
+                  type: boolean
+      responses:
+        '201':
+          description: Created.
+  /projects/:
+    get:
+      tags: [Projects]
+      summary: List projects
+      operationId: listProjects
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Projects]
+      summary: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '201':
+          description: Created.
+  /projects/{id}/:
+    get:
+      tags: [Projects]
+      summary: Retrieve a project
+      operationId: getProject
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A project.
+  /projects/{id}/update/:
+    post:
+      tags: [Projects]
+      summary: Trigger an SCM project update
+      operationId: updateProject
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Update started.
+  /inventories/:
+    get:
+      tags: [Inventories]
+      summary: List inventories
+      operationId: listInventories
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Inventories]
+      summary: Create an inventory
+      operationId: createInventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Inventory'
+      responses:
+        '201':
+          description: Created.
+  /inventories/{id}/:
+    get:
+      tags: [Inventories]
+      summary: Retrieve an inventory
+      operationId: getInventory
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: An inventory.
+    delete:
+      tags: [Inventories]
+      summary: Delete an inventory
+      operationId: deleteInventory
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: Deleted.
+  /hosts/:
+    get:
+      tags: [Hosts]
+      summary: List hosts
+      operationId: listHosts
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Hosts]
+      summary: Create a host
+      operationId: createHost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, inventory]
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                inventory:
+                  type: integer
+                enabled:
+                  type: boolean
+                variables:
+                  type: string
+                  description: YAML/JSON host variables.
+      responses:
+        '201':
+          description: Created.
+  /credentials/:
+    get:
+      tags: [Credentials]
+      summary: List credentials
+      operationId: listCredentials
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Credentials]
+      summary: Create a credential
+      operationId: createCredential
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, credential_type]
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                organization:
+                  type: integer
+                credential_type:
+                  type: integer
+                inputs:
+                  type: object
+                  additionalProperties: true
+      responses:
+        '201':
+          description: Created.
+  /job_templates/:
+    get:
+      tags: [Job Templates]
+      summary: List job templates
+      operationId: listJobTemplates
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      tags: [Job Templates]
+      summary: Create a job template
+      operationId: createJobTemplate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobTemplate'
+      responses:
+        '201':
+          description: Created.
+  /job_templates/{id}/:
+    get:
+      tags: [Job Templates]
+      summary: Retrieve a job template
+      operationId: getJobTemplate
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A job template.
+  /job_templates/{id}/launch/:
+    post:
+      tags: [Job Templates]
+      summary: Launch a job template
+      operationId: launchJobTemplate
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                extra_vars:
+                  type: object
+                  additionalProperties: true
+                limit:
+                  type: string
+                inventory:
+                  type: integer
+                credentials:
+                  type: array
+                  items:
+                    type: integer
+                job_tags:
+                  type: string
+                skip_tags:
+                  type: string
+      responses:
+        '201':
+          description: Job launched. Returns the created job.
+  /jobs/:
+    get:
+      tags: [Jobs]
+      summary: List jobs
+      operationId: listJobs
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [new, pending, waiting, running, successful, failed, error, canceled]
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /jobs/{id}/:
+    get:
+      tags: [Jobs]
+      summary: Retrieve a job
+      operationId: getJob
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A job.
+  /jobs/{id}/cancel/:
+    post:
+      tags: [Jobs]
+      summary: Cancel a job
+      operationId: cancelJob
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Cancel requested.
+  /jobs/{id}/stdout/:
+    get:
+      tags: [Jobs]
+      summary: Get job stdout
+      operationId: getJobStdout
+      parameters:
+        - $ref: '#/components/parameters/Id'
+        - name: format
+          in: query
+          schema:
+            type: string
+            enum: [html, txt, json, ansi, txt_download, ansi_download]
+      responses:
+        '200':
+          description: Job stdout in the requested format.
+  /workflow_job_templates/:
+    get:
+      tags: [Workflow Job Templates]
+      summary: List workflow job templates
+      operationId: listWorkflowJobTemplates
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /workflow_job_templates/{id}/launch/:
+    post:
+      tags: [Workflow Job Templates]
+      summary: Launch a workflow job template
+      operationId: launchWorkflowJobTemplate
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                extra_vars:
+                  type: object
+                  additionalProperties: true
+      responses:
+        '201':
+          description: Workflow job launched.
+  /workflow_jobs/:
+    get:
+      tags: [Workflow Jobs]
+      summary: List workflow jobs
+      operationId: listWorkflowJobs
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /schedules/:
+    get:
+      tags: [Schedules]
+      summary: List schedules
+      operationId: listSchedules
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+components:
+  securitySchemes:
+    OAuth2Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Personal or application OAuth2 access token.
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using local controller credentials.
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    PageSize:
+      name: page_size
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 200
+        default: 25
+    Search:
+      name: search
+      in: query
+      schema:
+        type: string
+  schemas:
+    Organization:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        max_hosts:
+          type: integer
+    Project:
+      type: object
+      required: [name, scm_type]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        organization:
+          type: integer
+        scm_type:
+          type: string
+          enum: [git, hg, svn, archive, insights, ""]
+        scm_url:
+          type: string
+        scm_branch:
+          type: string
+        scm_credential:
+          type: integer
+        scm_update_on_launch:
+          type: boolean
+    Inventory:
+      type: object
+      required: [name, organization]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        organization:
+          type: integer
+        kind:
+          type: string
+          enum: ["", smart]
+        variables:
+          type: string
+    JobTemplate:
+      type: object
+      required: [name, job_type, inventory, project, playbook]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        job_type:
+          type: string
+          enum: [run, check]
+        inventory:
+          type: integer
+        project:
+          type: integer
+        playbook:
+          type: string
+        credentials:
+          type: array
+          items:
+            type: integer
+        limit:
+          type: string
+        verbosity:
+          type: integer
+          minimum: 0
+          maximum: 5
+        extra_vars:
+          type: string
+        ask_variables_on_launch:
+          type: boolean
+        ask_limit_on_launch:
+          type: boolean
+        ask_tags_on_launch:
+          type: boolean
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
+security:
+  - OAuth2Token: []
+  - BasicAuth: []
