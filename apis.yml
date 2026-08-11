@@ -316,6 +316,16 @@ maintainers:
     X: apievangelist
     url: https://apievangelist.com
 common:
+  - type: IssueTracker
+    url: https://github.com/ansible/awx/issues
+  - type: Releases
+    url: https://github.com/ansible/awx/releases
+  - type: SecurityPolicy
+    url: https://github.com/ansible/awx/blob/devel/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/ansible/awx/blob/devel/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/ansible/awx/blob/devel/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/ansible-playbooks-agentic-access.yml
   - type: DomainSecurity
