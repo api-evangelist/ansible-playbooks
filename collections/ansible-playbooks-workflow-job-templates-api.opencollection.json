@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Workflow Job Templates API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow Job Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workflow job templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/workflow_job_templates/"
+          },
+          "docs": "List workflow job templates"
+        },
+        {
+          "info": {
+            "name": "Launch a workflow job template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{controller_host}/api/v2/workflow_job_templates/:id/launch/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Launch a workflow job template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

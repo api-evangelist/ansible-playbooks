@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Jobs API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/jobs/",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List jobs"
+        },
+        {
+          "info": {
+            "name": "Retrieve a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/jobs/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a job"
+        },
+        {
+          "info": {
+            "name": "Cancel a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{controller_host}/api/v2/jobs/:id/cancel/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a job"
+        },
+        {
+          "info": {
+            "name": "Get job stdout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/jobs/:id/stdout/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get job stdout"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

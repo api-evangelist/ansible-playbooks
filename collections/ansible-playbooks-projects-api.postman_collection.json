@@ -1,0 +1,441 @@
+{
+  "item": [
+    {
+      "id": "5df39143-95bd-4783-a903-24a0686f47e5",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a7951c48-aec3-47aa-b67e-37104287e23f",
+          "name": "List projects",
+          "request": {
+            "name": "List projects",
+            "description": {},
+            "url": {
+              "path": [
+                "projects",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5abe85c1-9612-4464-adcf-dfee8c790167",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5967,\n  \"next\": \"string\",\n  \"previous\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": false,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 9849.223372742279\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69cd708c-b3fe-40a1-954b-14cc7aed6b04",
+          "name": "Create a project",
+          "request": {
+            "name": "Create a project",
+            "description": {},
+            "url": {
+              "path": [
+                "projects",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"scm_type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"organization\": \"<integer>\",\n  \"scm_url\": \"<string>\",\n  \"scm_branch\": \"<string>\",\n  \"scm_credential\": \"<integer>\",\n  \"scm_update_on_launch\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8949cb03-2590-461d-8a94-5ef3c1073f54",
+              "name": "Created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"scm_type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"organization\": \"<integer>\",\n  \"scm_url\": \"<string>\",\n  \"scm_branch\": \"<string>\",\n  \"scm_credential\": \"<integer>\",\n  \"scm_update_on_launch\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4525dd3c-9e84-4025-a74b-ecfd63ee786c",
+          "name": "Retrieve a project",
+          "request": {
+            "name": "Retrieve a project",
+            "description": {},
+            "url": {
+              "path": [
+                "projects",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "871c79dc-38c8-44b3-bf18-66a4cd72809c",
+              "name": "A project.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abb20fa4-7620-4cd6-b31e-f9586e63e5af",
+          "name": "Trigger an SCM project update",
+          "request": {
+            "name": "Trigger an SCM project update",
+            "description": {},
+            "url": {
+              "path": [
+                "projects",
+                ":id",
+                "update",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4467bb62-eff3-4ac1-8f56-39939da8a428",
+              "name": "Update started.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":id",
+                    "update",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Automation Controller instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "controller.example.com",
+      "key": "controller_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{controller_host}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b5997822-09a5-4205-8c9d-d4a677b41657",
+    "name": "Ansible Automation Controller Playbooks Auth Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing and executing Ansible playbooks via the Ansible\nAutomation Controller (formerly Ansible Tower / AWX), the enterprise\nautomation engine inside the Red Hat Ansible Automation Platform.\nPlaybooks live inside projects (SCM-synced from Git, etc.) and are run\nvia job templates that bind them to inventories, credentials, and\nextra variables. The API exposes management of inventories, hosts,\ncredentials, projects, job templates, workflow job templates,\nschedules, organizations, teams, users, and the launching and\ninspection of jobs.\n\n\nContact Support:\n Name: Red Hat Ansible Support",
+      "type": "text/plain"
+    }
+  }
+}

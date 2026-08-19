@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Workflow Jobs API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workflow jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/workflow_jobs/"
+          },
+          "docs": "List workflow jobs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

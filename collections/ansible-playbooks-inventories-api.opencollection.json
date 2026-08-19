@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Inventories API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inventories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List inventories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/inventories/"
+          },
+          "docs": "List inventories"
+        },
+        {
+          "info": {
+            "name": "Create an inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{controller_host}/api/v2/inventories/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an inventory"
+        },
+        {
+          "info": {
+            "name": "Retrieve an inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/inventories/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an inventory"
+        },
+        {
+          "info": {
+            "name": "Delete an inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{controller_host}/api/v2/inventories/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an inventory"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,439 @@
+{
+  "item": [
+    {
+      "id": "69f8f996-47a1-412f-9fa2-7520fc81521a",
+      "name": "Inventories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81315ecf-9112-4faa-b7f8-115bd3527d29",
+          "name": "List inventories",
+          "request": {
+            "name": "List inventories",
+            "description": {},
+            "url": {
+              "path": [
+                "inventories",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "425f2d75-28bf-40ce-938b-340be26e528c",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventories",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 669,\n  \"next\": \"string\",\n  \"previous\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": true,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 775.6305154441434\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65683714-f936-481c-9527-fcb0f70389bc",
+          "name": "Create an inventory",
+          "request": {
+            "name": "Create an inventory",
+            "description": {},
+            "url": {
+              "path": [
+                "inventories",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"organization\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"variables\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba4693f1-8859-40b0-afe4-c48d18e9fd13",
+              "name": "Created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventories",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"organization\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"variables\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ceaf76a5-87f5-4c50-b74d-d60104f515a2",
+          "name": "Retrieve an inventory",
+          "request": {
+            "name": "Retrieve an inventory",
+            "description": {},
+            "url": {
+              "path": [
+                "inventories",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d37ce29a-2245-49c1-8c43-5a8ba3ac3a89",
+              "name": "An inventory.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventories",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27e073d3-fada-4281-8e17-ac5d300faeb6",
+          "name": "Delete an inventory",
+          "request": {
+            "name": "Delete an inventory",
+            "description": {},
+            "url": {
+              "path": [
+                "inventories",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32348c84-0844-44a0-b44a-480e97f7e7d4",
+              "name": "Deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventories",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Automation Controller instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "controller.example.com",
+      "key": "controller_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{controller_host}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ef8dacd7-10df-4208-934e-fcf3bf6edfa9",
+    "name": "Ansible Automation Controller Playbooks Auth Inventories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing and executing Ansible playbooks via the Ansible\nAutomation Controller (formerly Ansible Tower / AWX), the enterprise\nautomation engine inside the Red Hat Ansible Automation Platform.\nPlaybooks live inside projects (SCM-synced from Git, etc.) and are run\nvia job templates that bind them to inventories, credentials, and\nextra variables. The API exposes management of inventories, hosts,\ncredentials, projects, job templates, workflow job templates,\nschedules, organizations, teams, users, and the launching and\ninspection of jobs.\n\n\nContact Support:\n Name: Red Hat Ansible Support",
+      "type": "text/plain"
+    }
+  }
+}

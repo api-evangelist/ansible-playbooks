@@ -1,0 +1,476 @@
+{
+  "item": [
+    {
+      "id": "1444beaf-8dc2-4b87-be3b-f92fe88f406e",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "28b9de96-ff9b-403d-b4b8-dd48931c5483",
+          "name": "List jobs",
+          "request": {
+            "name": "List jobs",
+            "description": {},
+            "url": {
+              "path": [
+                "jobs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eef3ea50-ca5d-4557-ae5a-0b3a2ade268a",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 1350,\n  \"next\": \"string\",\n  \"previous\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 73,\n      \"key_2\": \"string\"\n    },\n    {\n      \"key_0\": 4130.905284429193\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f955870-ab44-486b-8d6b-eca2cd863e31",
+          "name": "Retrieve a job",
+          "request": {
+            "name": "Retrieve a job",
+            "description": {},
+            "url": {
+              "path": [
+                "jobs",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d09db052-c3fb-4265-a9e7-8c66da2fb9e8",
+              "name": "A job.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08128730-7412-4d55-b450-eeeb3c5e8040",
+          "name": "Cancel a job",
+          "request": {
+            "name": "Cancel a job",
+            "description": {},
+            "url": {
+              "path": [
+                "jobs",
+                ":id",
+                "cancel",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04b70303-002e-4f64-b49e-0612635ab45a",
+              "name": "Cancel requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":id",
+                    "cancel",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "303698e9-6199-4109-b65f-764572f8a3de",
+          "name": "Get job stdout",
+          "request": {
+            "name": "Get job stdout",
+            "description": {},
+            "url": {
+              "path": [
+                "jobs",
+                ":id",
+                "stdout",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "375e208c-bfc0-4354-81da-81758e64e8ac",
+              "name": "Job stdout in the requested format.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":id",
+                    "stdout",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Automation Controller instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "controller.example.com",
+      "key": "controller_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{controller_host}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "29edb0cb-9b5f-461c-bcb8-00cf1a5eaad1",
+    "name": "Ansible Automation Controller Playbooks Auth Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing and executing Ansible playbooks via the Ansible\nAutomation Controller (formerly Ansible Tower / AWX), the enterprise\nautomation engine inside the Red Hat Ansible Automation Platform.\nPlaybooks live inside projects (SCM-synced from Git, etc.) and are run\nvia job templates that bind them to inventories, credentials, and\nextra variables. The API exposes management of inventories, hosts,\ncredentials, projects, job templates, workflow job templates,\nschedules, organizations, teams, users, and the launching and\ninspection of jobs.\n\n\nContact Support:\n Name: Red Hat Ansible Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "5fee3d1f-c613-4383-babf-5521f34e0c3b",
+      "name": "Auth",
+      "description": {
+        "content": "OAuth2 token management.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "561dcb1b-f634-46c0-b2f4-c407dae2b5ca",
+          "name": "List OAuth2 tokens",
+          "request": {
+            "name": "List OAuth2 tokens",
+            "description": {},
+            "url": {
+              "path": [
+                "tokens",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e5ed3f8-66e9-4c8c-8194-06e0e196ee6b",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tokens",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 3935,\n  \"next\": \"string\",\n  \"previous\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": 9404\n    },\n    {\n      \"key_0\": 6571,\n      \"key_1\": 9231.929077305947\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35ecd24a-993f-4e15-8f7c-eadc375d4372",
+          "name": "Create an OAuth2 personal access token",
+          "request": {
+            "name": "Create an OAuth2 personal access token",
+            "description": {},
+            "url": {
+              "path": [
+                "tokens",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Automation Controller instance.",
+                  "type": "any",
+                  "value": "{{controller_host}}",
+                  "key": "controller_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"application\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "90f7b734-d443-41b4-a36b-790b61b53404",
+              "name": "Token created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tokens",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Automation Controller instance.",
+                      "type": "any",
+                      "value": "{{controller_host}}",
+                      "key": "controller_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"application\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Automation Controller instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "controller.example.com",
+      "key": "controller_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{controller_host}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6d2cd244-1fb6-4b07-87b6-12b63a7821b3",
+    "name": "Ansible Automation Controller Playbooks Auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing and executing Ansible playbooks via the Ansible\nAutomation Controller (formerly Ansible Tower / AWX), the enterprise\nautomation engine inside the Red Hat Ansible Automation Platform.\nPlaybooks live inside projects (SCM-synced from Git, etc.) and are run\nvia job templates that bind them to inventories, credentials, and\nextra variables. The API exposes management of inventories, hosts,\ncredentials, projects, job templates, workflow job templates,\nschedules, organizations, teams, users, and the launching and\ninspection of jobs.\n\n\nContact Support:\n Name: Red Hat Ansible Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Schedules API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/schedules/"
+          },
+          "docs": "List schedules"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Automation Controller Playbooks Auth Hosts API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hosts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List hosts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{controller_host}/api/v2/hosts/"
+          },
+          "docs": "List hosts"
+        },
+        {
+          "info": {
+            "name": "Create a host",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{controller_host}/api/v2/hosts/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a host"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
