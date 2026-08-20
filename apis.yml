@@ -28,6 +28,14 @@ tags:
   - Automation
   - Configuration Management
   - DevOps
+  - Infrastructure as Code
+  - Orchestration
+  - Playbooks
+tags_raw:
+  - Ansible
+  - Automation
+  - Configuration Management
+  - DevOps
   - Infrastructure As Code
   - Orchestration
   - Playbooks
@@ -42,6 +50,14 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - Ansible
+  - Automation
+  - Enterprise
+  - Job
+  - Orchestration
+  - Playbooks
+  - Red Hat
+  tags_raw:
   - Ansible
   - Automation
   - Enterprise
@@ -74,6 +90,12 @@ apis:
   humanURL: https://github.com/ansible/awx
   baseURL: https://your-awx-instance/api/v2/
   tags:
+  - Ansible
+  - Automation
+  - AWX
+  - Open-Source
+  - Playbooks
+  tags_raw:
   - Ansible
   - Automation
   - AWX
@@ -127,6 +149,12 @@ apis:
   baseURL: https://galaxy.ansible.com/api/
   tags:
   - Ansible
+  - Collection
+  - Community
+  - Galaxy
+  - Roles
+  tags_raw:
+  - Ansible
   - Collections
   - Community
   - Galaxy
@@ -152,6 +180,12 @@ apis:
   tags:
   - Ansible
   - Certified Content
+  - Collection
+  - Enterprise
+  - Red Hat
+  tags_raw:
+  - Ansible
+  - Certified Content
   - Collections
   - Enterprise
   - Red Hat
@@ -175,6 +209,12 @@ apis:
   baseURL: https://your-semaphore-instance/api/
   tags:
   - Ansible
+  - Open-Source
+  - Playbooks
+  - Semaphore
+  - Workflows
+  tags_raw:
+  - Ansible
   - Open Source
   - Playbooks
   - Semaphore
@@ -195,6 +235,8 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -245,6 +287,8 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -255,6 +299,8 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
@@ -265,6 +311,8 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -285,6 +333,8 @@ apis:
   humanURL: https://docs.ansible.com/automation-controller/latest/html/controllerapi/
   baseURL: https://your-aap-instance/api/v2/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
