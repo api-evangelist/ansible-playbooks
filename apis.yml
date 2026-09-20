@@ -35,6 +35,9 @@ url: https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/hea
 created: '2024-01-15'
 modified: '2026-09-16'
 specificationVersion: '0.23'
+x-docs-platform: readthedocs
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-09-19
 tags:
 - Ansible
 - Automation
