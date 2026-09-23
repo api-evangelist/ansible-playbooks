@@ -1,26 +1,12 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Ansible Automation Controller Playbooks Auth Job Templates API
+  title: Ansible Automation Controller Playbooks Job Templates API
   version: '2'
   description: 'REST API for managing and executing Ansible playbooks via the Ansible
 
     Automation Controller (formerly Ansible Tower / AWX), the enterprise
 
-    automation engine inside the Red Hat Ansible Automation Platform.
-
-    Playbooks live inside projects (SCM-synced from Git, etc.) and are run
-
-    via job templates that bind them to inventories, credentials, and
-
-    extra variables. The API exposes management of inventories, hosts,
-
-    credentials, projects, job templates, workflow job templates,
-
-    schedules, organizations, teams, users, and the launching and
-
-    inspection of jobs.
-
-    '
+    automation engine inside the Red Hat Ansible Automation Platform.'
   contact:
     name: Red Hat Ansible Support
     url: https://access.redhat.com/products/red-hat-ansible-automation-platform/
@@ -106,22 +92,6 @@ paths:
           description: Job launched. Returns the created job.
 components:
   schemas:
-    ListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
-        results:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
     JobTemplate:
       type: object
       required:
@@ -164,6 +134,22 @@ components:
           type: boolean
         ask_tags_on_launch:
           type: boolean
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   responses:
     ListResponse:
       description: A paginated list response.

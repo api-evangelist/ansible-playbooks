@@ -1,0 +1,31 @@
+# Front Door AI Index — ansible-playbooks — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: ansible-playbooks
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: ansible.com
+  final_host: www.redhat.com
+  ownership: shared
+  owner: ansible
+  shares_host_with:
+  - ansible
+  - ansible-automation-platform
+  - ansible-roles
+  inherited_from: null
+  verdict: scored
+  score: null
+  host_score: 2
+  density: null
+  words: 526
+  tiers:
+    agentic: 0
+    core: 2
+    model: 0
+  ambiguous: 23
+  top_terms:
+    automation: 22
+    AI: 1
+    generative ai: 1
+    intelligence: 1
