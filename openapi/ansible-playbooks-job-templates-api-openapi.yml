@@ -150,13 +150,6 @@ components:
           items:
             type: object
             additionalProperties: true
-  responses:
-    ListResponse:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListResponse'
   parameters:
     Id:
       name: id
@@ -164,6 +157,13 @@ components:
       required: true
       schema:
         type: integer
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
   securitySchemes:
     OAuth2Token:
       type: http
