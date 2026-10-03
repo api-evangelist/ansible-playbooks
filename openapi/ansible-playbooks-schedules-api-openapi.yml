@@ -33,6 +33,13 @@ paths:
         '200':
           $ref: '#/components/responses/ListResponse'
 components:
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
   schemas:
     ListResponse:
       type: object
@@ -50,13 +57,6 @@ components:
           items:
             type: object
             additionalProperties: true
-  responses:
-    ListResponse:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListResponse'
   securitySchemes:
     OAuth2Token:
       type: http
