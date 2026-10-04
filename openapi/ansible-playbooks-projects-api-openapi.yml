@@ -77,22 +77,6 @@ components:
           schema:
             $ref: '#/components/schemas/ListResponse'
   schemas:
-    ListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
-        results:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
     Project:
       type: object
       required:
@@ -122,6 +106,22 @@ components:
           type: integer
         scm_update_on_launch:
           type: boolean
+    ListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   parameters:
     Id:
       name: id

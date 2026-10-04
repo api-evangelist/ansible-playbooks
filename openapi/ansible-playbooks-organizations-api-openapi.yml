@@ -96,11 +96,12 @@ components:
         type: integer
         minimum: 1
         default: 1
-    Search:
-      name: search
-      in: query
+    Id:
+      name: id
+      in: path
+      required: true
       schema:
-        type: string
+        type: integer
     PageSize:
       name: page_size
       in: query
@@ -109,20 +110,23 @@ components:
         minimum: 1
         maximum: 200
         default: 25
-    Id:
-      name: id
-      in: path
-      required: true
+    Search:
+      name: search
+      in: query
       schema:
-        type: integer
-  responses:
-    ListResponse:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListResponse'
+        type: string
   schemas:
+    Organization:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        max_hosts:
+          type: integer
     ListResponse:
       type: object
       properties:
@@ -139,17 +143,13 @@ components:
           items:
             type: object
             additionalProperties: true
-    Organization:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        max_hosts:
-          type: integer
+  responses:
+    ListResponse:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListResponse'
   securitySchemes:
     OAuth2Token:
       type: http
