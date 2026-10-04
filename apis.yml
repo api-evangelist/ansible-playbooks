@@ -384,6 +384,9 @@ maintainers:
   X: apievangelist
   url: https://apievangelist.com
 common:
+- type: CapabilityMap
+  url: capabilities/ansible-playbooks-capability-edges.yml
+  name: Ansible Playbooks Business Capability Map
 - type: Website
   url: https://ansible.com
 - type: IssueTracker

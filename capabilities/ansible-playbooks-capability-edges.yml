@@ -1,0 +1,54 @@
+slug: ansible-playbooks
+provider: Ansible Playbooks
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Jobs
+  spec_file: ansible-playbooks-jobs-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.8
+  evidence: GET /jobs/ listJobs List jobs; POST /jobs/{id}/cancel/ cancelJob; 'REST API for managing and
+    executing Ansible playbooks via the Ansible Automation Controller'
+  reason: Jobs here are executions of Ansible playbook automation runs (list, retrieve, cancel, fetch
+    stdout) — day-to-day IT operations automation, not HR or business jobs.
+- tag: Job Templates
+  spec_file: ansible-playbooks-job-templates-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.75
+  evidence: 'POST /job_templates/{id}/launch/ ''Launch a job template''; schema ''JobTemplate''; description:
+    ''managing and executing Ansible playbooks ... enterprise automation engine'''
+  reason: Defining and launching job templates is the execution of configuration-management/orchestration
+    runs against infrastructure, which is squarely IT Operations Management (day-to-day operations and
+    automation).
+- tag: Workflow Job Templates
+  spec_file: ansible-playbooks-workflow-job-templates-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.75
+  evidence: POST /workflow_job_templates/{id}/launch/ launchWorkflowJobTemplate Launch a workflow job
+    template
+  reason: Templates define and launch orchestrated playbook automation workflows — IT operations automation/orchestration.
+- tag: Workflow Jobs
+  spec_file: ansible-playbooks-workflow-jobs-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.7
+  evidence: GET /workflow_jobs/ listWorkflowJobs List workflow jobs
+  reason: Workflow jobs are running/completed orchestrated automation executions in the Automation Controller
+    — IT operations automation monitoring.
