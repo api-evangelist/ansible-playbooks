@@ -384,6 +384,12 @@ maintainers:
   X: apievangelist
   url: https://apievangelist.com
 common:
+- type: Plans
+  url: plans/ansible-playbooks-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/ansible-playbooks-rate-limits.yml
+- type: FinOps
+  url: finops/ansible-playbooks-finops.yml
 - type: CapabilityMap
   url: capabilities/ansible-playbooks-capability-edges.yml
   name: Ansible Playbooks Business Capability Map
