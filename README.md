@@ -1,4 +1,4 @@
-# Ansible Playbooks (ansible-playbooks)
+# Ansible Playbooks
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,187 +66,187 @@
 
 A curated collection of APIs, tools, and platforms for managing and executing Ansible playbooks for IT automation, configuration management, and orchestration. Covers the Ansible Automation Platform, AWX, Galaxy, Automation Hub, Runner, and Semaphore APIs that power modern infrastructure automation workflows.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/apis.yml)
+**Areas:** Ansible · Automation · Configuration Management · DevOps · Infrastructure as Code · Orchestration · Playbooks
 
-## Tags
+## Ansible Playbooks on APIs.io
 
-- Ansible
-- Automation
-- Configuration Management
-- DevOps
-- Infrastructure As Code
-- Orchestration
-- Playbooks
+Everything profiled for Ansible Playbooks is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ansible-playbooks/](https://apis.io/providers/ansible-playbooks/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (18)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-04-19
+- [Ansible Automation Platform API](https://apis.io/apis/ansible-playbooks/ansible-automation-platform-api/) — REST API for Ansible Automation Platform (formerly Ansible Tower/AWX) to manage playbooks, inventories, credentials, job templates, and job execution at…
+- [AWX API](https://apis.io/apis/ansible-playbooks/awx-api/) — AWX is the open-source upstream project for Ansible Automation Platform, providing a web-based UI, REST API, and task engine for Ansible. The AWX API offers…
+- [Ansible Runner API](https://apis.io/apis/ansible-playbooks/ansible-runner-api/) — Ansible Runner is a Python library and CLI tool that provides a stable and consistent interface for executing Ansible playbooks programmatically from within…
+- [Ansible Galaxy API](https://apis.io/apis/ansible-playbooks/ansible-galaxy-api/) — Ansible Galaxy is the community hub for sharing Ansible roles and collections. The Galaxy REST API enables searching, downloading, and publishing Ansible…
+- [Ansible Automation Hub API](https://apis.io/apis/ansible-playbooks/ansible-automation-hub-api/) — Red Hat Ansible Automation Hub is the enterprise content hub for certified Ansible collections, roles, and execution environments. The API provides access…
+- [Ansible Semaphore API](https://apis.io/apis/ansible-playbooks/ansible-semaphore-api/) — Ansible Semaphore is an open-source modern web UI and REST API for running Ansible playbooks. It provides project management, task scheduling, access…
+- [Ansible Playbooks Auth API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-auth-api/) — OAuth2 token management.
+- [Ansible Playbooks Credentials API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-credentials-api/) — The Credentials API from Ansible Playbooks — 1 operation(s) for credentials.
+- [Ansible Playbooks Hosts API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-hosts-api/) — The Hosts API from Ansible Playbooks — 1 operation(s) for hosts.
+- [Ansible Playbooks Inventories API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-inventories-api/) — The Inventories API from Ansible Playbooks — 2 operation(s) for inventories.
+- [Ansible Playbooks Job Templates API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-job-templates-api/) — The Job Templates API from Ansible Playbooks — 3 operation(s) for job templates.
+- [Ansible Playbooks Jobs API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-jobs-api/) — The Jobs API from Ansible Playbooks — 4 operation(s) for jobs.
+- [Ansible Playbooks Organizations API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-organizations-api/) — The Organizations API from Ansible Playbooks — 2 operation(s) for organizations.
+- [Ansible Playbooks Projects API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-projects-api/) — The Projects API from Ansible Playbooks — 3 operation(s) for projects.
+- [Ansible Playbooks Schedules API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-schedules-api/) — The Schedules API from Ansible Playbooks — 1 operation(s) for schedules.
+- [Ansible Playbooks Users API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-users-api/) — The Users API from Ansible Playbooks — 1 operation(s) for users.
+- [Ansible Playbooks Workflow Job Templates API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-workflow-job-templates-api/) — The Workflow Job Templates API from Ansible Playbooks — 2 operation(s) for workflow job templates.
+- [Ansible Playbooks Workflow Jobs API](https://apis.io/apis/ansible-playbooks/ansible-playbooks-workflow-jobs-api/) — The Workflow Jobs API from Ansible Playbooks — 1 operation(s) for workflow jobs.
 
-## APIs
+### Published properties
 
-### Ansible Automation Platform API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for Ansible Automation Platform (formerly Ansible Tower/AWX) to manage playbooks, inventories, credentials, job templates, and job execution at enterprise scale. Supports RBAC, workflows, schedules, notifications, and survey prompts. Available as a self-hosted deployment or managed via Red Hat's cloud.
+#### Agentic access (1)
 
-- **Human URL:** [https://docs.ansible.com/automation-controller/latest/html/controllerapi/](https://docs.ansible.com/automation-controller/latest/html/controllerapi/)
-- **Base URL:** `https://your-aap-instance/api/v2/`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Ansible Playbooks Agentic Access](https://apis.io/agentic-access/ansible-playbooks/ansible-playbooks-agentic-access/)
 
-- Ansible
-- Automation
-- Enterprise
-- Jobs
-- Orchestration
-- Playbooks
-- Red Hat
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.ansible.com/automation-controller/latest/html/controllerapi/)
-- [API Reference](https://docs.ansible.com/automation-controller/latest/html/controllerapi/api_ref.html)
-- [Authentication](https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html)
-- [Pricing](https://www.ansible.com/products/pricing)
-- [Getting Started](https://docs.ansible.com/automation-controller/latest/html/quickstart/)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Inventory](https://apis.io/schemas/ansible-playbooks/ansible-playbooks-inventory/)
+- [PlaybookJob](https://apis.io/schemas/ansible-playbooks/ansible-playbooks-playbook-job/)
 
-### AWX API
+#### JSON Structure (2)
 
-AWX is the open-source upstream project for Ansible Automation Platform, providing a web-based UI, REST API, and task engine for Ansible. The AWX API offers programmatic access to job execution, inventory management, credential storage, workflow templates, and scheduling. Self-hosted and free under the Apache 2.0 license.
+Data models expressed in JSON Structure.
 
-- **Human URL:** [https://github.com/ansible/awx](https://github.com/ansible/awx)
-- **Base URL:** `https://your-awx-instance/api/v2/`
+- [Ansible Playbooks Inventory Structure](https://apis.io/json-structure/ansible-playbooks/ansible-playbooks-inventory-structure/)
+- [Ansible Playbooks Playbook Job Structure](https://apis.io/json-structure/ansible-playbooks/ansible-playbooks-playbook-job-structure/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Ansible
-- Automation
-- AWX
-- Open Source
-- Playbooks
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Ansible Playbooks Context](https://apis.io/jsonld/ansible-playbooks/ansible-playbooks-context/)
 
-- [Documentation](https://ansible.readthedocs.io/projects/awx/en/latest/)
-- [API Reference](https://github.com/ansible/awx/blob/devel/docs/rest_api.md)
-- [GitHub Repository](https://github.com/ansible/awx)
-- [Getting Started](https://github.com/ansible/awx/blob/devel/INSTALL.md)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Vocabulary (1)
 
-### Ansible Runner API
+The provider's domain terms, defined.
 
-Ansible Runner is a Python library and CLI tool that provides a stable and consistent interface for executing Ansible playbooks programmatically from within other applications and tools. Used by AWX, Automation Platform, and CI/CD pipelines to launch Ansible with structured input and output handling.
+- [Ansible Playbooks Vocabulary](https://apis.io/vocabularies/ansible-playbooks/ansible-playbooks-vocabulary/)
 
-- **Human URL:** [https://ansible-runner.readthedocs.io/](https://ansible-runner.readthedocs.io/)
-- **Base URL:** `https://pypi.org/project/ansible-runner/`
+#### Examples (2)
 
-#### Tags
+Example requests and responses.
 
-- Ansible
-- Automation
-- Library
-- Playbooks
-- Python
+- [Ansible Playbooks Inventory Example](https://apis.io/examples/ansible-playbooks/ansible-playbooks-inventory-example/)
+- [Ansible Playbooks Playbook Job Example](https://apis.io/examples/ansible-playbooks/ansible-playbooks-playbook-job-example/)
 
-#### Properties
+#### Collections (13)
 
-- [Documentation](https://ansible-runner.readthedocs.io/en/stable/)
-- [API Reference](https://ansible-runner.readthedocs.io/en/stable/python_interface.html)
-- [GitHub Repository](https://github.com/ansible/ansible-runner)
-- [SDK](https://pypi.org/project/ansible-runner/)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### Ansible Galaxy API
+- [Ansible Automation Controller Playbooks API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks/)
+- [Ansible Automation Controller Playbooks Auth API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-auth-api/)
+- [Ansible Automation Controller Playbooks Auth Credentials API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-credentials-api/)
+- [Ansible Automation Controller Playbooks Auth Hosts API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-hosts-api/)
+- [Ansible Automation Controller Playbooks Auth Inventories API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-inventories-api/)
+- [Ansible Automation Controller Playbooks Auth Job Templates API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-job-templates-api/)
+- [Ansible Automation Controller Playbooks Auth Jobs API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-jobs-api/)
+- [Ansible Automation Controller Playbooks Auth Organizations API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-organizations-api/)
+- [Ansible Automation Controller Playbooks Auth Projects API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-projects-api/)
+- [Ansible Automation Controller Playbooks Auth Schedules API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-schedules-api/)
+- [Ansible Automation Controller Playbooks Auth Users API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-users-api/)
+- [Ansible Automation Controller Playbooks Auth Workflow Job Templates API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-workflow-job-templates-api/)
+- [Ansible Automation Controller Playbooks Auth Workflow Jobs API](https://apis.io/collections/ansible-playbooks/open-ansible-playbooks-workflow-jobs-api/)
 
-Ansible Galaxy is the community hub for sharing Ansible roles and collections. The Galaxy REST API enables searching, downloading, and publishing Ansible content. Supports v1 (roles), v2 (mixed), and v3 (collections) API versions with namespace management, search, versioning, and download statistics.
+#### Governance rules (1)
 
-- **Human URL:** [https://galaxy.ansible.com](https://galaxy.ansible.com)
-- **Base URL:** `https://galaxy.ansible.com/api/`
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [Ansible Playbooks — jsonschema rules](https://apis.io/rules/ansible-playbooks/ansible-playbooks-jsonschema-spectral-rules/)
 
-- Ansible
-- Collections
-- Community
-- Galaxy
-- Roles
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://galaxy.ansible.com/docs/)
-- [API Reference](https://galaxy.ansible.com/api/v3/)
-- [Getting Started](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Ansible Playbooks Authentication](https://apis.io/security/ansible-playbooks/ansible-playbooks-authentication/)
+- [Ansible Playbooks Domain Security](https://apis.io/security/ansible-playbooks/ansible-playbooks-domain-security/)
 
-### Ansible Automation Hub API
+#### Plans and pricing (1)
 
-Red Hat Ansible Automation Hub is the enterprise content hub for certified Ansible collections, roles, and execution environments. The API provides access to Red Hat certified and partner-validated Ansible content for use in production Ansible Automation Platform deployments.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://console.redhat.com/ansible/automation-hub](https://console.redhat.com/ansible/automation-hub)
-- **Base URL:** `https://console.redhat.com/api/automation-hub/`
+- [Ansible Playbooks Plans Pricing](https://apis.io/plans/ansible-playbooks/ansible-playbooks-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Ansible
-- Certified Content
-- Collections
-- Enterprise
-- Red Hat
+Published request limits.
 
-#### Properties
+- [Ansible Playbooks Rate Limits](https://apis.io/rate-limits/ansible-playbooks/ansible-playbooks-rate-limits/)
 
-- [Documentation](https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/)
-- [API Reference](https://console.redhat.com/api/automation-hub/v3/)
-- [Portal](https://console.redhat.com/ansible/automation-hub)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### Ansible Semaphore API
+What the API costs to run, by operation.
 
-Ansible Semaphore is an open-source modern web UI and REST API for running Ansible playbooks. It provides project management, task scheduling, access control, and a clean interface for teams using Ansible without the complexity of Automation Platform. The REST API supports full task and project management.
+- [Ansible Playbooks Finops](https://apis.io/finops/ansible-playbooks/ansible-playbooks-finops/)
 
-- **Human URL:** [https://www.ansible-semaphore.com/](https://www.ansible-semaphore.com/)
-- **Base URL:** `https://your-semaphore-instance/api/`
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Ansible
-- Open Source
-- Playbooks
-- Semaphore
-- Workflow
-
-#### Properties
-
-- [Documentation](https://docs.ansible-semaphore.com/)
-- [API Reference](https://docs.ansible-semaphore.com/api-reference)
-- [GitHub Repository](https://github.com/ansible-semaphore/semaphore)
-- [Postman Collection](collections/ansible-playbooks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-playbooks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Getting Started](https://docs.ansible.com/ansible/latest/getting_started/)
-- [Best Practices](https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html)
+- [Website](https://ansible.com)
+- [Getting started](https://docs.ansible.com/ansible/latest/getting_started/)
 - [Blog](https://www.ansible.com/blog)
-- [Terms of Service](https://www.redhat.com/en/about/terms-use)
-- [Privacy Policy](https://www.redhat.com/en/about/privacy-policy)
-- [GitHub Organization](https://github.com/ansible)
-- [Forum](https://forum.ansible.com/)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/json-schema/ansible-playbooks-playbook-job-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/json-schema/ansible-playbooks-inventory-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/ansible-playbooks/refs/heads/main/vocabulary/ansible-playbooks-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://www.redhat.com/en/about/terms-use)
+- [Privacy policy](https://www.redhat.com/en/about/privacy-policy)
+- [GitHub](https://github.com/ansible)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 45.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.0 |
+| Contract governance | 23.5 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 28.9 |
+
+**Agent readiness 24.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ansible-playbooks/](https://apis.io/providers/ansible-playbooks/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ansible Playbooks: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ansible-playbooks/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
